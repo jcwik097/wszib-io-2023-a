@@ -16,6 +16,11 @@ class Trojkaty {
          if (a == b || b == c || a == c) {
              System.out.println("Trójkąt równoramienny");
          }
+		 
+		 if (czyProstokatny(a, b, c)) {
+             System.out.println("Trójkąt prostokątny");
+         }
+				  
          // TODO: tutaj trzeba bedzie dopisac inne przypadki
     }
     /** Wyświetla ekran pomocy */
@@ -24,7 +29,18 @@ class Trojkaty {
         System.out.println("Program do rozpoznawania rodzaju trójkąra");
         System.out.println("Uruchom z trzema argumentami liczbowymi - długość boków trójkąta");
     }
-    /** Glowna funkcja */
+    
+	
+	public static boolean czyProstokatny(float a, float b, float c){
+                   if (a * a + b * b == c*c) return true;
+                   if (b * b + c * c == a*a) return true;
+                   if (a * a + c * c == b*b) return true;
+                   return false;
+               }
+	
+	
+	
+	/** Glowna funkcja */
     public static void main(String... args) {
         if (args.length != 3) {
             pomoc();
